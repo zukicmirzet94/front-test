@@ -120,6 +120,7 @@ should contain:
 - Focus on clean and maintainable code architecture
 - Use Angular best practices
 - You may use standalone components
+- State management solution (NgRx, signals-based store etc.) is encouraged, but is not required
 - Responsive design is encouraged but not required
 
 ---
