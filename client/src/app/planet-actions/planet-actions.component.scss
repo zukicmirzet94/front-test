@@ -1,0 +1,25 @@
+@import '../../colors.scss';
+
+.card {
+    width: 500px;
+    height: 550px;
+    background-color: $white;
+    border-radius: 16px;
+    padding: 25px;
+
+    .browse-btn {
+        height: 28px;
+        background-color: $grayBase;
+        padding: 0 15px;
+        font-size: 14px;
+        color: $white;
+    }
+
+    .planet-input {
+        padding: 0 10px;
+    }
+
+    textarea {
+        padding: 15px 10px !important;
+    }
+}

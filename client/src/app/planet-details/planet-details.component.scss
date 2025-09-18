@@ -1,0 +1,42 @@
+@import '../../colors.scss';
+
+.card {
+    img {
+        width: 180px;
+    }
+}
+
+.max-height-220 {
+    max-height: 220px;
+}
+
+.main-info-planet {
+    border: 1px solid $grayL80;
+    width: 60%;
+}
+
+.additional-details-planet {
+    height: 232px;
+    width: 40%;
+}
+
+@media (max-width: 1024px) {
+  .planets-main-block {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    height: calc(100% - 175px);
+  }
+  .main-info-planet {
+    flex-direction: column;
+    div {
+        align-items: center;
+    }
+  }
+  .main-info-planet,
+  .additional-details-planet {
+    width: 100%;
+    max-width: 500px;
+    max-height: unset;
+  }
+}

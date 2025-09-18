@@ -1,0 +1,24 @@
+<div class="flex align-items-center justify-content-between header">
+    <span class="font-38-bold"> {{ page === Page.List ? 'Planets' : planetName }} </span>
+    @if (page === Page.List) {
+    <div class="flex align-items-center">
+        <div class="flex align-items-center gap-5 switch-block">
+            <img src="./assets/icons/grid{{selectedView === ViewType.Grid ? '-active' : ''}}.png" class="cursor-pointer"
+                (click)="selectView(ViewType.Grid)" />
+            <div class="v-line"></div>
+            <img src="./assets/icons/list{{selectedView === ViewType.List ? '-active' : ''}}.png" class="cursor-pointer"
+                (click)="selectView(ViewType.List)" />
+        </div>
+        <div class="search-block mx-25">
+            <img src="./assets/icons/search.png" />
+            <input class="planet-input" placeholder="Search..." [(ngModel)]="searchValue" (ngModelChange)="search()" />
+        </div>
+        <button class="planet-button" (click)="firePlanetAction(ActionType.Create)"> New Planet </button>
+    </div>
+    } @else {
+        <div class="flex gap-10">
+            <button class="planet-button edit-btn" (click)="firePlanetAction(ActionType.Edit)"> Edit </button>
+            <button class="planet-button delete-btn" (click)="firePlanetAction(ActionType.Delete)"> Delete </button>
+        </div>
+    }
+</div>

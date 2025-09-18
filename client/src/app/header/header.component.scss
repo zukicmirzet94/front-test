@@ -1,0 +1,52 @@
+@import '../../colors.scss';
+
+.header {
+    height: 50px;
+    width: calc(100% - 50px);
+    padding: 25px;
+    background-color: $white;
+}
+
+.switch-block {
+    .v-line {
+        height: 28px;
+    }
+}
+
+.search-block {
+    position: relative;
+
+    input {
+        width: 200px;
+        padding-left: 30px;
+    }
+
+    img {
+        position: absolute;
+        left: 5px;
+        top: calc(50% - 10px);
+    }
+}
+
+.planet-button {
+    background-color: $primary;
+    color: $white;
+    width: 120px;
+}
+
+.edit-btn {
+    background-color: $gray;
+    color: $blue;
+}
+
+.delete-btn {
+    background-color: $planetBlue;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        height: 95px;
+        padding: 15px 25px;
+    }
+}

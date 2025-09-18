@@ -1,0 +1,71 @@
+@import '../../colors.scss';
+
+.planets-table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+
+    th,
+    td {
+        border: 0;
+        border-bottom: 1px solid $grayL80;
+        padding: 8px 12px;
+        text-align: left;
+        background-color: $white;
+    }
+
+    th {
+        color: $grayL20;
+        width: 15%;
+    }
+
+    .name-column {
+        width: 40%;
+        max-width: 40%;
+    }
+
+    .planet-description {
+        color: $grayL20;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 300px;
+    }
+}
+
+.planets-grid {
+    flex-wrap: wrap;
+
+    .one-grid {
+        background-color: $white;
+        width: calc(25% - 50px);
+        max-width: 285px;
+        height: 515px;
+        border-radius: 16px;
+        padding: 20px;
+        cursor: pointer;
+
+        .planet-description {
+            margin: 30px 0;
+        }
+    }
+}
+
+.planet-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+}
+
+@media (max-width: 1024px) {
+    .planets-grid {
+        .one-grid {
+            min-width: 250px;
+        }
+
+        .planet-description {
+            max-height: 175px;
+            overflow: auto;
+        }
+    }
+}

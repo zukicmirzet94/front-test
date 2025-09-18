@@ -1,0 +1,49 @@
+@if (!isOpenedConfirmationPopup) {
+<div class="flex flex-column gap-25 card">
+    <span class="font-20-semi-bold"> {{ action === ActionType.Create ? 'New' : 'Edit' }} Planet </span>
+    <form [formGroup]="planetForm" (ngSubmit)="isOpenedConfirmationPopup = true" class="flex flex-column gap-25">
+        <div class="flex align-items-center justify-content-between">
+            <span class="font-14-regular gray-base-color"> Photo </span>
+            <button type="button" class="planet-button browse-btn" (click)="openFileSelector()"> Browse... </button>
+            <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+        </div>
+        <div class="flex flex-column">
+            <label class="label-input"> Name </label>
+            <input class="planet-input" formControlName="planetName" />
+        </div>
+        <div class="flex flex-column">
+            <label class="label-input"> Description </label>
+            <textarea class="planet-input" rows="5" formControlName="description"></textarea>
+        </div>
+        <div class="flex align-items-center justify-content-between gap-25">
+            <div class="flex flex-column w-50">
+                <label class="label-input"> Radius in km </label>
+                <input class="planet-input" type="number" formControlName="planetRadiusKM" />
+            </div>
+            <div class="flex flex-column w-50">
+                <label class="label-input"> Color </label>
+                <input class="planet-input" formControlName="planetColor" />
+            </div>
+        </div>
+        <div class="flex align-items-center justify-content-between gap-25" formGroupName="distInMillionsKM">
+            <div class="flex flex-column w-50">
+                <label class="label-input"> Dist. from Sun </label>
+                <input class="planet-input" type="number" formControlName="fromSun" />
+            </div>
+            <div class="flex flex-column w-50">
+                <label class="label-input"> Dist. from Earth </label>
+                <input class="planet-input" type="number" formControlName="fromEarth" />
+            </div>
+        </div>
+        <div class="flex align-items-center justify-content-center buttons-block">
+            <button type="submit" class="planet-button create-btn" [disabled]="!planetForm.valid || (!selectedFile && action !== ActionType.Edit)">
+                {{ action === ActionType.Create ? 'Create' : 'Confirm' }} </button>
+            <button type="button" class="planet-button cancel-btn" (click)="close()"> Cancel </button>
+        </div>
+    </form>
+</div>
+} @else {
+<div class="dialog-box">
+    <app-confirmation-popup [type]="action" [planetName]="planetForm.value.planetName" (closePopup)="closePopup($event)"></app-confirmation-popup>
+</div>
+}

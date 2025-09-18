@@ -1,0 +1,56 @@
+@import './colors.scss';
+
+.font-38-bold {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 40px;
+    color: $grayD60;
+}
+
+.font-12-regular {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.font-14-regular {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.font-14-semi-bold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.font-16-regular {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.font-16-semi-bold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.font-20-semi-bold {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.font-24-medium {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.font-36-bold {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
+}

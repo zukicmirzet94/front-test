@@ -1,0 +1,45 @@
+<div class="flex flex-column h-100">
+    <app-header (planetAction)="getPlanetAction($event)" [page]="Page.Details" [planetName]="planet?.planetName || ''"></app-header>
+    <div class="flex align-items-start p-25 gap-25 planets-main-block">
+        <div class="flex align-items-center gap-25 main-info-planet max-height-220 card">
+            <img [src]="planet?.imageUrl" />
+            <div class="flex flex-column gap-25">
+                <span class="font-36-bold"> {{ planet?.planetName }} </span>
+                <span class="font-14-regular gray-base-color"> {{ planet?.description }} </span>
+            </div>
+        </div>
+        <div class="flex align-items-center additional-details-planet gap-25">
+            <div class="flex flex-column gap-25 h-100" style="width: 60%;">
+                <div class="flex flex-column align-items-center justify-content-center gap-10 card h-50">
+                    <span class="font-24-medium"> {{ planet?.planetRadiusKM }} </span>
+                    <span class="font-12-regular gray-l80-color"> Radius in km </span>
+                </div>
+                <div class="flex flex-column align-items-center justify-content-center gap-10 card h-50">
+                    <span class="font-24-medium"> {{ planet?.planetColor }} </span>
+                    <span class="font-12-regular gray-l80-color"> Color</span>
+                </div>
+            </div>
+            <div class="flex flex-column gap-25 h-100" style="width: 40%;">
+                <div class="flex flex-column align-items-center justify-content-center gap-10 card h-50">
+                    <span class="font-24-medium"> {{ planet?.distInMillionsKM?.fromSun }}  </span>
+                    <span class="font-12-regular gray-l80-color"> Dist. from Sun </span>
+                </div>
+                <div class="flex flex-column align-items-center justify-content-center gap-10 card h-50">
+                    <span class="font-24-medium"> {{ planet?.distInMillionsKM?.fromEarth }} </span>
+                    <span class="font-12-regular gray-l80-color"> Dist. from Earth</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (isOpenedPlanetActions) {
+<div class="dialog-box">
+    <app-planet-actions (closeDialog)="closeDialog($event)" [planet]="planet"></app-planet-actions>
+</div>
+}
+@if (isOpenedDeletingPlanet) {
+<div class="dialog-box">
+    <app-confirmation-popup [type]="ActionType.Delete" [planetName]="planet?.planetName || ''" (closePopup)="closePopup($event)"></app-confirmation-popup>
+</div>
+}

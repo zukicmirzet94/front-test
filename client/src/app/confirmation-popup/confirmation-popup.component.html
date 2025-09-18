@@ -1,0 +1,9 @@
+<div class="flex flex-column align-items-center justify-content-center gap-25 card">
+    <img src="./assets/icons/info.png" />
+    <span class="font-20-semi-bold"> Confirm {{ popupActionText.header }} ?</span>
+    <span class="font-14-regular"> Are you sure you want to {{ popupActionText.body }} <strong> {{ planetName }} </strong>? </span>
+    <div class="flex align-items-center justify-content-center buttons-block">
+        <button class="planet-button create-btn" (click)="close(true)"> Confirm </button>
+        <button class="planet-button cancel-btn" (click)="close()"> Cancel </button>
+    </div>
+</div>
